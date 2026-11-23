@@ -1,0 +1,191 @@
+main {
+  min-height: 500px;
+}
+
+/* ---------- Banner ---------- */
+#section-banner {
+  min-height: 400px;
+}
+#section-banner img {
+  height: 500px;
+  object-fit: cover;
+  object-position: right center;
+}
+.carousel-caption {
+  left: 8%;
+  right: auto;
+  top: 50%;
+  bottom: auto;
+  transform: translateY(-50%);
+  max-width: 520px;
+  text-align: left;
+}
+.carousel-caption h1,
+.carousel-caption h2 {
+  font-size: 40px;
+  font-weight: 800;
+  line-height: 1.15;
+}
+.carousel-caption p {
+  color: #C8CDD8;
+  font-size: 18px;
+  margin-bottom: 22px;
+}
+.selo {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: #9DB8FF;
+  margin-bottom: 10px;
+}
+.botao-azul {
+  --mdc-filled-button-container-color: #1D4ED8;
+  --mdc-filled-button-label-text-color: #fff;
+  font-weight: 600;
+}
+
+/* ---------- Benefícios ---------- */
+.beneficios {
+  padding: 26px 12px;
+  border-bottom: 1px solid #E3E5EA;
+}
+.beneficio {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+.beneficio mat-icon {
+  color: #1D4ED8;
+  font-size: 30px;
+  height: 30px;
+  width: 30px;
+}
+.beneficio strong { display: block; }
+.beneficio span { color: #5B6170; font-size: 13px; }
+
+/* ---------- Vitrines ---------- */
+.vitrine {
+  padding: 48px 12px;
+  text-align: center;
+}
+.fundo-cinza {
+  background: #F5F6F8;
+}
+h2 {
+  font-weight: 800;
+}
+.subtitulo {
+  color: #5B6170;
+}
+mat-grid-list {
+  margin: 10px 0px;
+}
+mat-grid-tile {
+  padding: 2px;
+  border-radius: 30px;
+}
+
+/* ---------- Cards ---------- */
+.example-card {
+  position: relative;
+  max-width: 340px;
+  width: 100%;
+  height: 96%;
+  display: flex;
+  flex-direction: column;
+  border-radius: 14px;
+  overflow: hidden;
+  transition: transform .2s, box-shadow .2s;
+}
+.example-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgba(17, 19, 24, .12);
+}
+mat-card img {
+  height: 300px;
+  width: 100%;
+  object-fit: cover;
+}
+.card-acessorio img {
+  height: 220px;
+}
+mat-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+mat-card-title {
+  font-weight: 700;
+}
+mat-card-content p {
+  color: #5B6170;
+  font-size: 14px;
+  margin: 6px 0 0;
+}
+mat-card-actions {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: auto;
+  padding: 12px 16px 18px !important;
+}
+.precos {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+}
+mat-card-actions p {
+  color: #111318;
+  font-size: 24px;
+  font-weight: 800;
+  margin: 0;
+}
+.preco-antigo {
+  color: #5B6170;
+  text-decoration: line-through;
+  font-size: 13px;
+}
+.pix {
+  color: #15803D;
+  font-size: 13px;
+}
+.desconto {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  z-index: 2;
+  background: #DC2626;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 6px;
+}
+
+/* ---------- Responsividade ---------- */
+@media (max-width: 991.98px) {
+  .carousel-item::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, rgba(11, 13, 18, .85), rgba(11, 13, 18, .45));
+  }
+  .carousel-caption { z-index: 2; max-width: 75%; }
+  .carousel-caption h1, .carousel-caption h2 { font-size: 30px; }
+}
+@media (max-width: 575.98px) {
+  #section-banner img { height: 380px; }
+  .carousel-caption { left: 6%; max-width: 88%; }
+  .carousel-caption h1, .carousel-caption h2 { font-size: 23px; }
+  .carousel-caption p { font-size: 15px; }
+}
+
+/* Capas dos jogos: mostra a parte de baixo, onde fica o nome do jogo */
+mat-card:not(.card-acessorio) img {
+  object-position: center bottom;
+}
+@media (max-width: 575.98px) {
+  .carousel-control-prev, .carousel-control-next { display: none; }
+}
