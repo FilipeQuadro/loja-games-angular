@@ -1,0 +1,44 @@
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 700px;
+  padding: 24px 12px;
+  background: #F5F6F8;
+}
+#section-login {
+  height: 100%;
+  width: 400px;
+  max-width: 100%;
+  border-radius: 16px;
+  border: 1px solid #E3E5EA;
+  background: #fff;
+  padding: 32px 28px;
+  box-shadow: 0 10px 30px rgba(17, 19, 24, .08);
+  text-align: center;
+}
+.logo {
+  width: 56px;
+  height: 56px;
+  margin-bottom: 8px;
+}
+h2 {
+  font-weight: 800;
+}
+.texto {
+  color: #5B6170;
+  font-size: 14px;
+  margin-bottom: 22px;
+}
+mat-form-field {
+  text-align: left;
+}
+mat-icon[matPrefix] {
+  margin: 0 8px 0 12px;
+  color: #5B6170;
+}
+.dica {
+  margin: 18px 0 0;
+  font-size: 13px;
+  color: #5B6170;
+}

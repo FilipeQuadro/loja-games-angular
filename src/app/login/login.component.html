@@ -1,0 +1,35 @@
+<main>
+  <section id="section-login">
+    <img src="./assets/img/logo.png" alt="Logo Checkpoint Games" class="logo">
+    <h2>Login</h2>
+    <p class="texto">Entre para acompanhar seus pedidos e salvar seus jogos favoritos.</p>
+
+    <form (ngSubmit)="entrar()" #formLogin="ngForm">
+      <!-- Campo de usuário (form field do Angular Material) -->
+      <mat-form-field appearance="outline" class="w-100">
+        <mat-label>Usuário</mat-label>
+        <input matInput name="usuario" [(ngModel)]="usuario" placeholder="Digite seu usuário" autocomplete="username" required>
+        <mat-icon matPrefix>person</mat-icon>
+      </mat-form-field>
+
+      <!-- Campo de senha com botão de mostrar/esconder -->
+      <mat-form-field appearance="outline" class="w-100">
+        <mat-label>Senha</mat-label>
+        <input matInput name="senha" [(ngModel)]="senha" [type]="esconderSenha ? 'password' : 'text'"
+          placeholder="Digite sua senha" autocomplete="current-password" required>
+        <mat-icon matPrefix>lock</mat-icon>
+        <button mat-icon-button matSuffix type="button" (click)="esconderSenha = !esconderSenha"
+          [attr.aria-label]="esconderSenha ? 'Mostrar senha' : 'Esconder senha'">
+          <mat-icon>{{ esconderSenha ? 'visibility' : 'visibility_off' }}</mat-icon>
+        </button>
+      </mat-form-field>
+
+      <div class="alert alert-danger py-2" role="alert" *ngIf="erro">{{ erro }}</div>
+
+      <button type="submit" class="btn btn-primary btn-lg w-100">Entrar</button>
+      <button type="button" mat-button class="w-100 mt-2" (click)="esqueciSenha()">Esqueci minha senha</button>
+    </form>
+
+    <p class="dica">Usuário de teste: <b>admin</b> · senha: <b>123456</b></p>
+  </section>
+</main>
