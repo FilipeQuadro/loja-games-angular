@@ -1,0 +1,27 @@
+/* Estilos globais do site */
+html, body { height: 100%; }
+body {
+  margin: 0;
+  font-family: Inter, Roboto, "Helvetica Neue", sans-serif;
+  color: #111318;
+  background: #fff;
+}
+:root {
+  --preto: #0B0D12;
+  --azul: #1D4ED8;
+  --azul-escuro: #1E40AF;
+  --cinza-fundo: #F5F6F8;
+  --borda: #E3E5EA;
+  --texto-2: #5B6170;
+}
+/* Cor da barra superior do Angular Material (toolbar) */
+.mat-toolbar.mat-primary {
+  --mat-toolbar-container-background-color: #0B0D12;
+  --mat-toolbar-container-text-color: #fff;
+}
+.btn-primary {
+  --bs-btn-bg: #1D4ED8;
+  --bs-btn-border-color: #1D4ED8;
+  --bs-btn-hover-bg: #1E40AF;
+  --bs-btn-hover-border-color: #1E40AF;
+}
