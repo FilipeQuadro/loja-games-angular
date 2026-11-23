@@ -1,0 +1,57 @@
+<mat-toolbar color="primary" class="menu">
+  <span>
+    <a routerLink="inicio" class="marca">
+      <img src="./assets/img/logo.png" alt="Logo Checkpoint Games">
+      <span class="d-none d-sm-flex">CHECKPOINT<small>GAMES</small></span>
+    </a>
+  </span>
+
+  <!-- Links do menu (somem no celular e vão para o menu de 3 pontinhos) -->
+  <nav class="links d-none d-md-flex">
+    <a routerLink="inicio" routerLinkActive="ativo">Produtos</a>
+    <button mat-button class="link-menu" [matMenuTriggerFor]="categorias">
+      Categorias <mat-icon iconPositionEnd>expand_more</mat-icon>
+    </button>
+  </nav>
+
+  <!-- Menu suspenso do Angular Material -->
+  <mat-menu #categorias="matMenu">
+    <a mat-menu-item routerLink="inicio" fragment="jogos"><mat-icon>sports_esports</mat-icon> Jogos</a>
+    <a mat-menu-item routerLink="inicio" fragment="acessorios"><mat-icon>headset</mat-icon> Acessórios</a>
+    <a mat-menu-item routerLink="inicio" fragment="contato"><mat-icon>call</mat-icon> Contato</a>
+  </mat-menu>
+
+  <span class="example-spacer"></span>
+
+  <span class="d-none d-lg-inline contato"><mat-icon>call</mat-icon> (75) 3000-0000</span>
+
+  <button mat-icon-button aria-label="Carrinho" routerLink="inicio">
+    <mat-icon [matBadge]="carrinho.quantidade" [matBadgeHidden]="carrinho.quantidade === 0"
+      matBadgeColor="accent" matBadgeSize="small">shopping_cart</mat-icon>
+  </button>
+
+  <span *ngIf="!carrinho.usuarioLogado">
+    <a routerLink="login" routerLinkActive="ativo" class="botao-login">
+      <mat-icon>person</mat-icon> Login
+    </a>
+  </span>
+  <span *ngIf="carrinho.usuarioLogado">
+    <button mat-button class="botao-login" [matMenuTriggerFor]="conta">
+      <mat-icon>account_circle</mat-icon> Olá, {{ carrinho.usuarioLogado }}
+    </button>
+    <mat-menu #conta="matMenu">
+      <button mat-menu-item (click)="carrinho.sair()"><mat-icon>logout</mat-icon> Sair</button>
+    </mat-menu>
+  </span>
+
+  <!-- Menu do celular -->
+  <button mat-icon-button class="d-md-none" [matMenuTriggerFor]="celular" aria-label="Abrir menu">
+    <mat-icon>more_vert</mat-icon>
+  </button>
+  <mat-menu #celular="matMenu">
+    <a mat-menu-item routerLink="inicio">Produtos</a>
+    <a mat-menu-item routerLink="inicio" fragment="jogos">Jogos</a>
+    <a mat-menu-item routerLink="inicio" fragment="acessorios">Acessórios</a>
+    <a mat-menu-item routerLink="login">Login</a>
+  </mat-menu>
+</mat-toolbar>
